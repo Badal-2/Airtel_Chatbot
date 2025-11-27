@@ -82,3 +82,50 @@ chatbot_minimax/
 │   └── index.html           # Chat UI
 ├── requirements.txt
 └── manage.py
+
+
+
+
+
+
+
+
+py
+🧠 How RAG Works
+
+Data Preparation: Airtel company data stored in airtel_data.py
+Embedding: Text converted to vectors using sentence-transformers
+Indexing: Vectors stored in FAISS index (in-memory)
+Search: User query converted to vector, FAISS finds TOP-K similar results
+Context: Retrieved results passed to GROQ LLM
+Generation: LLM generates natural response with context
+Memory: Chat saved in PostgreSQL for future context
+
+💬 Usage
+Text Chat
+
+Type message in input field
+Click send button or press Enter
+Bot responds with voice + text
+
+Voice Chat
+
+Click microphone button
+Speak your question
+Bot responds automatically
+
+Example Queries
+
+"What's the best Airtel plan?"
+"How do I recharge?"
+"What's your customer support number?"
+"Tell me about 5G plans"
+"Who developed you?"
+
+
+
+
+
+
+    <img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/df83fbd7-1730-4614-a04f-c5f5f772531a" />
+
