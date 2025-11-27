@@ -19,7 +19,6 @@ def chat_page(request):
 
 @csrf_exempt
 def get_llm_response(request):
-    """Handle chat requests with RAG"""
     print("🔵 /api/chat/ endpoint called!")
     
     if request.method != 'POST':
@@ -29,15 +28,14 @@ def get_llm_response(request):
         data = json.loads(request.body)
         user_message = data.get('response', '').strip()
         
-        print(f"👤 User message: {user_message}")
         
         if not user_message:
             return JsonResponse({'error': 'Empty message'}, status=400)
         
         # Get LLM response with RAG
         reply = get_groq_response_with_rag(user_message)
-        print(f"🤖 Bot reply: {reply}")
         
+
         # NEW: Save conversation to database
         user_id = data.get('sender', 'user_default')
         session_id = data.get('number', 'session_default')
@@ -60,9 +58,7 @@ def get_llm_response(request):
 
 
 @csrf_exempt
-def generate_voice(request):
-    print("🔵 /generate1/ endpoint called!")
-    
+def generate_voice(request):    
     if request.method != 'POST':
         return JsonResponse({'error': 'Only POST allowed'}, status=405)
     

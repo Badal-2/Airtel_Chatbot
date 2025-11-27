@@ -100,7 +100,6 @@ Answer ONLY based on the Airtel information above. If the question is not about 
         return reply
     
     except Exception as e:
-        # print(f"❌ GROQ Error: {str(e)}")
         return f"Error: {str(e)}"
 
 
@@ -137,7 +136,6 @@ def generate_voice_from_text(text):
 # ========== Conversation FUNCTIONS ==========
 
 def save_conversation(user_id, user_message, bot_response, session_id="default"):
-    """Save conversation to database for memory tracking"""
     try:
         conversation = Conversation(
             user_id=user_id,

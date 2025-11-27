@@ -1,3 +1,17 @@
+__Airtel Chatbot with RAG__
+
+An intelligent customer support chatbot for Airtel that uses Retrieval Augmented Generation (RAG) to provide accurate, context-aware responses about Airtel services.
+
+
+
+
+
+
+
+
+
+
+
 __2nd flow__
 
 
@@ -62,3 +76,26 @@ __CorrectFlow__
     └──────────────────────────────┘
 
 User vectors are NOT saved - only USED for searching! 🔍
+
+
+
+
+
+
+ 👉👉👉  ALL THESE THINGS ARE VERY IMPORTANT __BADAL__
+
+
+
+Why Convert User Text to Vector?
+Because FAISS only understands VECTORS (numbers)!
+User Text: "Best plan?"
+    ↓
+Convert to Vector: [0.25, 0.55, 0.85, ...]
+    ↓
+NOW FAISS can compare it with Airtel vectors!
+    ↓
+FAISS finds: "Which Airtel vector is closest to user vector?"
+    ↓
+Returns TOP-K similar results ✅
+
+
